@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class MyController {
-     @GetMapping("/ok/{pv1}/{pv2}")
-    fun ok(params: OkParams):String = params.toString();
+     @GetMapping("/ok/{pv1}/{pv2}/{pv3}")
+    fun ok(params: OkParams):String = params.toString()
 
-    data class OkParams(var pv1:String, var pv2:String)
+    data class OkParams(var pv1:String, var pv2:String, var pv3:String)
     
     @GetMapping("/error/{pv1}/{pv2}")
-    fun notOk(params: NotOkParams):String = params.toString();
+    fun notOk(params: NotOkParams):String = params.toString()
 
     data class NotOkParams(val pv1:String, val pv2: String)
 }
